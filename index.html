@@ -1,0 +1,223 @@
+<!DOCTYPE html><html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Key Editor</title><style>
+body {
+  background:#0f172a;
+  color:white;
+  font-family:Arial;
+  padding:20px;
+  text-align:center;
+}
+
+#lock {
+  margin-top:100px;
+}
+
+button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+  background:#22c55e;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#timer {
+  margin-top:15px;
+  color:yellow;
+  font-size:18px;
+}
+
+#content {
+  display:none;
+}
+
+.box {
+  max-width:400px;
+  margin:auto;
+  background:#1e293b;
+  padding:20px;
+  border-radius:15px;
+  text-align:left;
+}
+
+input {
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+}
+
+.ads {
+  margin-top:30px;
+}
+
+.ad-box {
+  background:#111827;
+  margin:15px auto;
+  padding:10px;
+  border-radius:10px;
+  max-width:320px;
+}
+</style></head><body><!-- 🔒 LOCK --><div id="lock">
+  <h2>🔓 Unlock Key Editor</h2>
+  <p>Click below to continue</p>
+  <button onclick="openAd()">Continue</button>
+  <div id="timer"></div>
+</div><!-- 🎮 CONTENT --><div id="content">  <div class="box">
+    <h2>🎮 Key Editor (Accurate)</h2><input type="file" id="file">
+
+<label>Current Value (IMPORTANT)</label>
+<input type="number" id="current" placeholder="e.g. 3">
+
+<label>New Value</label>
+<input type="number" id="newval" placeholder="e.g. 50">
+
+<button onclick="editFile()">Modify & Download</button>
+
+<p id="status"></p>
+
+  </div>  <!-- 💰 ADS -->  <div class="ads"><!-- Ad 1 -->
+<div class="ad-box">
+  <script>
+    atOptions = {
+      'key' : '59431978358c7300959b2b763de090ee',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/59431978358c7300959b2b763de090ee/invoke.js"></script>
+</div>
+
+<!-- Ad 2 -->
+<div class="ad-box">
+  <script>
+    atOptions = {
+      'key' : '06996e54bebc872baf4c7c08666862fe',
+      'format' : 'iframe',
+      'height' : 60,
+      'width' : 468,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/06996e54bebc872baf4c7c08666862fe/invoke.js"></script>
+</div>
+
+<!-- Ad 3 (Native) -->
+<div class="ad-box">
+  <div id="container-e7f96fff0842a4a472bd093329955e1f"></div>
+</div>
+
+<!-- Ad 4 (Direct script) -->
+<div class="ad-box">
+  <script src="https://pl23753570.profitablecpmratenetwork.com/93/9d/be/939dbedb6a5fa5881623af43ab8ca9c3.js"></script>
+</div>
+
+<!-- Ad 5 -->
+<div class="ad-box">
+  <script>
+    atOptions = {
+      'key' : '8f368a50b412aa07ff3a1b1ff95211f0',
+      'format' : 'iframe',
+      'height' : 50,
+      'width' : 320,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/8f368a50b412aa07ff3a1b1ff95211f0/invoke.js"></script>
+</div>
+
+  </div></div><!-- 🔥 LOAD NATIVE AD SCRIPT ONCE --><script async="async" data-cfasync="false"
+src="https://pl24650146.profitablecpmratenetwork.com/e7f96fff0842a4a472bd093329955e1f/invoke.js">
+</script><script>
+let timeLeft = 10;
+let started = false;
+
+function openAd() {
+  if (started) return;
+  started = true;
+
+  window.open("https://www.profitablecpmratenetwork.com/m3ixsj0zj?key=40ccb40392a65e623db65082a9041578", "_blank");
+
+  let timer = setInterval(() => {
+    document.getElementById("timer").innerText = "⏳ Wait " + timeLeft + " sec...";
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(timer);
+      document.getElementById("lock").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }
+  }, 1000);
+}
+
+// ORIGINAL FUNCTION
+function editFile() {
+  let file = document.getElementById("file").files[0];
+  let current = parseInt(document.getElementById("current").value);
+  let newval = parseInt(document.getElementById("newval").value);
+
+  if (!file) return alert("Upload file");
+  if (!current || !newval) return alert("Enter values");
+
+  let reader = new FileReader();
+
+  reader.onload = function(e) {
+    let data = new Uint8Array(e.target.result);
+
+    let oldBytes = [
+      current & 0xFF,
+      (current >> 8) & 0xFF,
+      (current >> 16) & 0xFF,
+      (current >> 24) & 0xFF
+    ];
+
+    let newBytes = [
+      newval & 0xFF,
+      (newval >> 8) & 0xFF,
+      (newval >> 16) & 0xFF,
+      (newval >> 24) & 0xFF
+    ];
+
+    let found = false;
+
+    for (let i = 0; i < data.length - 4; i++) {
+      if (
+        data[i] === oldBytes[0] &&
+        data[i+1] === oldBytes[1] &&
+        data[i+2] === oldBytes[2] &&
+        data[i+3] === oldBytes[3]
+      ) {
+        data[i] = newBytes[0];
+        data[i+1] = newBytes[1];
+        data[i+2] = newBytes[2];
+        data[i+3] = newBytes[3];
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      document.getElementById("status").innerText = "❌ Value not found";
+      return;
+    }
+
+    let blob = new Blob([data]);
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "PlayerData_modified.bytes";
+    a.click();
+
+    document.getElementById("status").innerText = "✅ Success!";
+  };
+
+  reader.readAsArrayBuffer(file);
+}
+</script></body>
+</html>
